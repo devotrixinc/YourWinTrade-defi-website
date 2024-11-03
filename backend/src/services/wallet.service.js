@@ -11,10 +11,22 @@ const testTokenList = require('../utils/polygon_testnet.json');
 const {BNB_ADDRESS, COIN_AMOUNT, ADMIN_GAS_LIMIT, ADMIN_GAS_PRICE} = require('../utils/constants');
 const emailService = require('./emailer.service');
 const i18n = require('i18n');
-
+const axios = require("axios");
 class WalletService {
     constructor() {
 
+    }
+
+    static async getCurrentPrices() {
+        try {
+            // Call the Python API
+            const response = await axios.get("http://localhost:5005/prices");
+            console.log(response)
+            return response.data;  // { ETH: <price>, BNB: <price> }
+        } catch (error) {
+            console.log("Error fetching prices:", error);
+            throw new Error("Failed to fetch current prices from Python service");
+        }
     }
 
     static async createWallet(userId, keyphrase, locale) {

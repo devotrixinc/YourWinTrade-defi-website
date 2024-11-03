@@ -33,5 +33,6 @@ router.post('/gettransaction', auth(), getTransactionSchema, awaitHandlerFactory
 router.post('/getadmintransaction', auth(Role.Super), awaitHandlerFactory(WalletController.getAdminTransaction));
 router.post('/getcoinfortransaction', auth(), awaitHandlerFactory(WalletController.getCoinForTransaction));
 router.get('/getwalletbyemail/:email', auth(Role.Super), awaitHandlerFactory(WalletController.getWalletByEmail));
+router.get('/crypto-prices', awaitHandlerFactory(WalletController.getCurrentPrices));
 
 module.exports = router;

@@ -1,6 +1,16 @@
 const WalletService = require("../services/wallet.service")
 
 class WalletController {
+
+    getCurrentPrices = async (req, res, next) => {
+        try {
+            const result = await WalletService.getCurrentPrices();
+            res.send(result)
+        } catch (error) {
+            next(error)
+        }
+    }
+
     getTopTokens = async (req, res, next) => {
         try {
             const result = await WalletService.getTopTokens();

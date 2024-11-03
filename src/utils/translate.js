@@ -5,6 +5,10 @@ const resources = {
   
   En: {
     translation: {
+      "marketPrice": "Crypto Market Price",
+      "ethPrice": "ETH Price",
+      "bnbPrice": "BNB Price",
+      "Loading...": "Ачааллаж байна...",
       "Products":"Products",
       "Buy Crypto":"Buy Crypto",
       "Markets":"Markets",
@@ -254,6 +258,10 @@ const resources = {
   },
   Mn: {
     translation: {
+      "Crypto Market Price": "Крипто зах зээлийн үнэ",
+      "ETH Price": "ETH үнэ",
+      "BNB Price": "BNB үнэ",
+      "Loading...": "Ачааллаж байна...",
       "Products":"бүтээгдэхүүн",
       "Buy Crypto":"Крипто худалдаж авах",
       "Markets":"Зах зээл",
